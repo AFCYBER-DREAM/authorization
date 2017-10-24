@@ -1,0 +1,5 @@
+{% if item.password_required %}
+%{{ item.sudo_group }}	ALL=(ALL)	 ALL
+{% else %}
+%{{ item.sudo_group }}  ALL=(ALL)  NOPASSWD: ALL
+{% endif %}
