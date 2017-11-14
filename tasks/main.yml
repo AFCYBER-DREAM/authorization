@@ -12,7 +12,7 @@
     state: present
     owner: root
     group: root
-    mode: 0644
+    mode: 0440
     line: "#includedir /etc/sudoers.d"
     validate: 'visudo -scf %s'
 
@@ -22,7 +22,7 @@
     dest: /etc/sudoers.d/remote-{{ item.sudo_group }}
     owner: root
     group: root
-    mode: 0644
+    mode: 0440
     validate: 'visudo -scf %s'
   with_items:
     - "{{ remote_sudoers }}"
@@ -34,7 +34,7 @@
     dest: /etc/sudoers.d/local-{{ item.sudo_group }}
     owner: root
     group: root
-    mode: 0644
+    mode: 0440
     validate: 'visudo -scf %s'
   with_items:
     - "{{ local_sudoers }}"
